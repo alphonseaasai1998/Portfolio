@@ -1,42 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aasai Thambi| Portfolio</title>
+    <title>Aasai Thambi | Portfolio</title>
 
     <meta
         name="description"
         content="Professional portfolio of Aasai Thambi"
     >
 
-    <!-- Google Fonts -->
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
-    <!-- CSS -->
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
+
+
+    <!-- =====================================================
+         PROFILE IMAGE CUSTOM CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           HERO IMAGE CONTAINER
+        ====================================================== */
+
+        .hero-image {
+            position: relative;
+
+            width: 380px;
+            height: 380px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =====================================================
+           OUTER CIRCLE BACKGROUND
+        ====================================================== */
+
+        .hero-image::before {
+            content: "";
+
+            position: absolute;
+
+            width: 340px;
+            height: 340px;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f0f4ff 0%,
+                    #e1eafa 50%,
+                    #cdd9eb 100%
+                );
+
+            box-shadow:
+                0 20px 50px rgba(15, 23, 42, 0.20);
+
+            z-index: 1;
+        }
+
+
+        /* =====================================================
+           REMOVE INNER CIRCLE
+        ====================================================== */
+
+        .hero-image::after {
+            content: none !important;
+            display: none !important;
+        }
+
+
+        /* =====================================================
+           PROFILE IMAGE
+        ====================================================== */
+
+        .profile-image {
+            position: absolute;
+
+            width: 330px !important;
+            height: 330px !important;
+
+            top: 50%;
+            left: 50%;
+
+            /*
+             * Keeps image exactly centered.
+             */
+            transform: translate(-50%, -50%);
+
+            border-radius: 50% !important;
+
+            /*
+             * Keeps the face proportional.
+             * Prevents stretching.
+             */
+            object-fit: cover !important;
+
+            /*
+             * Slightly zooms the framing out/up.
+             */
+            object-position: center 45% !important;
+
+            border: 5px solid #ffffff;
+
+            box-sizing: border-box;
+
+            display: block;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            z-index: 3;
+
+            clip-path: none !important;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.16);
+        }
+
+
+        /* =====================================================
+           IMAGE GLOW
+        ====================================================== */
+
+        .image-glow {
+            position: absolute;
+
+            width: 355px;
+            height: 355px;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background: #6366f1;
+
+            opacity: 0.07;
+
+            filter: blur(40px);
+
+            z-index: 0;
+        }
+
+
+        /* =====================================================
+           PURPLE DECORATION
+        ====================================================== */
+
+        .decoration-one {
+            position: absolute;
+
+            width: 22px;
+            height: 22px;
+
+            top: 28px;
+            right: 28px;
+
+            border-radius: 50%;
+
+            background: #3443a0;
+
+            border: 2px solid #7c3aed;
+
+            z-index: 6;
+
+            box-shadow:
+                0 4px 12px rgba(124, 58, 237, 0.25);
+        }
+
+
+        /* =====================================================
+           YELLOW DECORATION
+        ====================================================== */
+
+        .decoration-two {
+            position: absolute;
+
+            width: 14px;
+            height: 14px;
+
+            bottom: 32px;
+            left: 32px;
+
+            border-radius: 50%;
+
+            background: #f59e0b;
+
+            border: 2px solid #075985;
+
+            z-index: 6;
+
+            box-shadow:
+                0 4px 12px rgba(245, 158, 11, 0.25);
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero-image {
+                width: 340px;
+                height: 340px;
+            }
+
+
+            .hero-image::before {
+                width: 305px;
+                height: 305px;
+            }
+
+
+            .profile-image {
+                width: 295px !important;
+                height: 295px !important;
+
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+
+                object-fit: cover !important;
+
+                object-position: center 45% !important;
+            }
+
+
+            .image-glow {
+                width: 315px;
+                height: 315px;
+            }
+
+
+            .decoration-one {
+                top: 18px;
+                right: 18px;
+            }
+
+
+            .decoration-two {
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 768px) {
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+
+                margin: 30px auto 0;
+            }
+
+
+            .hero-image::before {
+                width: 270px;
+                height: 270px;
+            }
+
+
+            .profile-image {
+                width: 260px !important;
+                height: 260px !important;
+
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+
+                object-fit: cover !important;
+
+                object-position: center 45% !important;
+
+                border-width: 4px;
+            }
+
+
+            .image-glow {
+                width: 280px;
+                height: 280px;
+            }
+
+
+            .decoration-one {
+                width: 19px;
+                height: 19px;
+
+                top: 15px;
+                right: 10px;
+            }
+
+
+            .decoration-two {
+                width: 13px;
+                height: 13px;
+
+                bottom: 18px;
+                left: 12px;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 480px) {
+
+            .hero-image {
+                width: 270px;
+                height: 270px;
+            }
+
+
+            .hero-image::before {
+                width: 245px;
+                height: 245px;
+            }
+
+
+            .profile-image {
+                width: 235px !important;
+                height: 235px !important;
+
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+
+                object-fit: cover !important;
+
+                object-position: center 45% !important;
+
+                border-width: 4px;
+            }
+
+
+            .image-glow {
+                width: 255px;
+                height: 255px;
+            }
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
     <header class="navbar">
+
         <div class="container nav-container">
 
-            <a href="#home" class="logo">
-                           </a>
 
-            <nav class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#experience" class="nav-link">Experience</a>
+            <a
+                href="#home"
+                class="logo"
+            >
+                Aasai
+            </a>
 
-                <!-- Replace the URL with your Google Drive resume link -->
+
+            <nav
+                class="nav-menu"
+                id="navMenu"
+            >
+
+                <a
+                    href="#home"
+                    class="nav-link active"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="#experience"
+                    class="nav-link"
+                >
+                    Experience
+                </a>
+
+
                 <a
                     href="https://drive.google.com/file/d/1dpYEq8zfYbEimDNtsM-AwAYblnleAr3t/view?usp=drive_link"
                     target="_blank"
@@ -46,29 +439,55 @@
                     Resume
                 </a>
 
-                <a href="#projects" class="nav-link">Projects</a>
+
+                <a
+                    href="#projects"
+                    class="nav-link"
+                >
+                    Projects
+                </a>
+
             </nav>
+
 
             <button
                 class="menu-toggle"
                 id="menuToggle"
                 aria-label="Toggle navigation"
             >
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </button>
 
         </div>
+
     </header>
 
 
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
     <main>
 
-        <!-- ================= HOME ================= -->
-        <section id="home" class="hero section">
+
+        <!-- =====================================================
+             HOME
+        ====================================================== -->
+
+        <section
+            id="home"
+            class="hero section"
+        >
 
             <div class="container hero-container">
+
+
+                <!-- HERO CONTENT -->
 
                 <div class="hero-content">
 
@@ -76,13 +495,16 @@
                         Hello, I'm
                     </p>
 
+
                     <h1>
                         Aasai Thambi <span></span>
                     </h1>
 
+
                     <h2>
                         Professional Developer
                     </h2>
+
 
                     <p class="hero-description">
                         I am a passionate and dedicated professional who enjoys
@@ -91,26 +513,53 @@
                         and efficient solutions.
                     </p>
 
+
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
+
+                        <a
+                            href="#projects"
+                            class="btn btn-primary"
+                        >
                             View My Projects
                         </a>
 
-                        <a href="#contact" class="btn btn-outline">
+
+                        <a
+                            href="#contact"
+                            class="btn btn-outline"
+                        >
                             Contact Me
                         </a>
+
                     </div>
 
-                    <div class="contact-details" id="contact">
 
-                        <a href="tel:+919999999999">
-                            <span class="contact-icon">☎</span>
+                    <!-- CONTACT DETAILS -->
+
+                    <div
+                        class="contact-details"
+                        id="contact"
+                    >
+
+                        <a href="tel:+918939474640">
+
+                            <span class="contact-icon">
+                                ☎
+                            </span>
+
                             +91 8939474640
+
                         </a>
 
-                        <a href="mailto:aasai@example.com">
-                            <span class="contact-icon">✉</span>
+
+                        <a href="mailto:alphonseaasai1998@example.com">
+
+                            <span class="contact-icon">
+                                ✉
+                            </span>
+
                             alphonseaasai1998@example.com
+
                         </a>
 
                     </div>
@@ -118,22 +567,32 @@
                 </div>
 
 
+
+                <!-- =================================================
+                     PROFILE IMAGE
+                ================================================== -->
+
                 <div class="hero-image">
+
 
                     <div class="image-glow"></div>
 
-                    <!--
-                        Replace "profile.jpg" with your actual photo.
-                        Keep the image in the same folder as index.html.
-                    -->
+
                     <img
                         src="assets/AASAI.jpg"
                         alt="Aasai Thambi D."
                         class="profile-image"
                     >
 
-                    <div class="image-decoration decoration-one"></div>
-                    <div class="image-decoration decoration-two"></div>
+
+                    <div
+                        class="image-decoration decoration-one"
+                    ></div>
+
+
+                    <div
+                        class="image-decoration decoration-two"
+                    ></div>
 
                 </div>
 
@@ -142,43 +601,96 @@
         </section>
 
 
-        <!-- ================= ABOUT ================= -->
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
         <section class="about section">
 
             <div class="container">
 
+
                 <div class="section-heading">
-                    <p class="section-label">About Me</p>
-                    <h2>Turning ideas into meaningful solutions.</h2>
+
+                    <p class="section-label">
+                        About Me
+                    </p>
+
+
+                    <h2>
+                        Turning ideas into meaningful solutions.
+                    </h2>
+
                 </div>
+
 
                 <div class="about-grid">
 
+
+                    <!-- CARD 1 -->
+
                     <div class="about-card">
-                        <div class="about-number">01</div>
-                        <h3>Creative Thinking</h3>
+
+                        <div class="about-number">
+                            01
+                        </div>
+
+
+                        <h3>
+                            Creative Thinking
+                        </h3>
+
+
                         <p>
                             I enjoy understanding problems and finding
                             practical, creative solutions.
                         </p>
+
                     </div>
 
+
+                    <!-- CARD 2 -->
+
                     <div class="about-card">
-                        <div class="about-number">02</div>
-                        <h3>Clean Development</h3>
+
+                        <div class="about-number">
+                            02
+                        </div>
+
+
+                        <h3>
+                            Clean Development
+                        </h3>
+
+
                         <p>
                             I believe good software should be simple,
                             maintainable and easy to use.
                         </p>
+
                     </div>
 
+
+                    <!-- CARD 3 -->
+
                     <div class="about-card">
-                        <div class="about-number">03</div>
-                        <h3>Continuous Learning</h3>
+
+                        <div class="about-number">
+                            03
+                        </div>
+
+
+                        <h3>
+                            Continuous Learning
+                        </h3>
+
+
                         <p>
                             I continuously improve my technical skills and
                             explore modern technologies.
                         </p>
+
                     </div>
 
                 </div>
@@ -188,31 +700,53 @@
         </section>
 
 
-        <!-- ================= EXPERIENCE ================= -->
-        <section id="experience" class="experience section">
+
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
+
+        <section
+            id="experience"
+            class="experience section"
+        >
 
             <div class="container">
 
+
                 <div class="section-heading">
-                    <p class="section-label">Career</p>
-                    <h2>My Experience</h2>
+
+                    <p class="section-label">
+                        Career
+                    </p>
+
+
+                    <h2>
+                        My Experience
+                    </h2>
+
+
                     <p>
                         A timeline of my professional experience and
                         responsibilities.
                     </p>
+
                 </div>
 
 
                 <div class="timeline">
 
-                    <!-- Experience 1 -->
+
+                    <!-- EXPERIENCE 1 -->
+
                     <article class="experience-card">
 
                         <div class="timeline-dot"></div>
 
+
                         <div class="experience-date">
                             2024 — Present
                         </div>
+
 
                         <div class="experience-content">
 
@@ -220,9 +754,16 @@
                                 Professional Experience
                             </span>
 
-                            <h3>Job Title</h3>
 
-                            <h4>Company Name</h4>
+                            <h3>
+                                Job Title
+                            </h3>
+
+
+                            <h4>
+                                Company Name
+                            </h4>
+
 
                             <p>
                                 Describe your role, responsibilities and
@@ -230,10 +771,13 @@
                                 you worked with and the impact you created.
                             </p>
 
+
                             <div class="skill-tags">
+
                                 <span>HTML</span>
                                 <span>CSS</span>
                                 <span>JavaScript</span>
+
                             </div>
 
                         </div>
@@ -241,14 +785,18 @@
                     </article>
 
 
-                    <!-- Experience 2 -->
+
+                    <!-- EXPERIENCE 2 -->
+
                     <article class="experience-card">
 
                         <div class="timeline-dot"></div>
 
+
                         <div class="experience-date">
                             2022 — 2024
                         </div>
+
 
                         <div class="experience-content">
 
@@ -256,9 +804,16 @@
                                 Previous Experience
                             </span>
 
-                            <h3>Previous Job Title</h3>
 
-                            <h4>Previous Company</h4>
+                            <h3>
+                                Previous Job Title
+                            </h3>
+
+
+                            <h4>
+                                Previous Company
+                            </h4>
+
 
                             <p>
                                 Add your previous work experience here.
@@ -266,10 +821,13 @@
                                 projects and accomplishments.
                             </p>
 
+
                             <div class="skill-tags">
+
                                 <span>Development</span>
                                 <span>UI Design</span>
                                 <span>Problem Solving</span>
+
                             </div>
 
                         </div>
@@ -277,14 +835,18 @@
                     </article>
 
 
-                    <!-- Experience 3 -->
+
+                    <!-- EXPERIENCE 3 -->
+
                     <article class="experience-card">
 
                         <div class="timeline-dot"></div>
 
+
                         <div class="experience-date">
                             2021 — 2022
                         </div>
+
 
                         <div class="experience-content">
 
@@ -292,19 +854,29 @@
                                 Internship
                             </span>
 
-                            <h3>Intern / Trainee</h3>
 
-                            <h4>Organization Name</h4>
+                            <h3>
+                                Intern / Trainee
+                            </h3>
+
+
+                            <h4>
+                                Organization Name
+                            </h4>
+
 
                             <p>
                                 Add your internship experience,
                                 responsibilities and the skills you gained.
                             </p>
 
+
                             <div class="skill-tags">
+
                                 <span>Learning</span>
                                 <span>Teamwork</span>
                                 <span>Development</span>
+
                             </div>
 
                         </div>
@@ -318,28 +890,39 @@
         </section>
 
 
-        <!-- ================= RESUME ================= -->
+
+        <!-- =====================================================
+             RESUME
+        ====================================================== -->
+
         <section class="resume-section section">
 
             <div class="container resume-container">
 
+
                 <div>
-                    <p class="section-label">Resume</p>
+
+                    <p class="section-label">
+                        Resume
+                    </p>
+
 
                     <h2>
                         Want to know more about my professional journey?
                     </h2>
+
 
                     <p>
                         View my complete resume for my education,
                         experience, technical skills and professional
                         background.
                     </p>
+
                 </div>
 
-                <!-- Replace with your actual Google Drive resume URL -->
+
                 <a
-                   href="https://drive.google.com/file/d/1dpYEq8zfYbEimDNtsM-AwAYblnleAr3t/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1dpYEq8zfYbEimDNtsM-AwAYblnleAr3t/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn btn-light"
@@ -352,34 +935,59 @@
         </section>
 
 
-        <!-- ================= PROJECTS ================= -->
-        <section id="projects" class="projects section">
+
+        <!-- =====================================================
+             PROJECTS
+        ====================================================== -->
+
+        <section
+            id="projects"
+            class="projects section"
+        >
 
             <div class="container">
 
+
                 <div class="section-heading">
-                    <p class="section-label">Portfolio</p>
-                    <h2>Featured Projects</h2>
+
+                    <p class="section-label">
+                        Portfolio
+                    </p>
+
+
+                    <h2>
+                        Featured Projects
+                    </h2>
+
+
                     <p>
                         Some of my project concepts and development work.
                     </p>
+
                 </div>
 
 
                 <div class="projects-grid">
 
-                    <!-- Project 1 -->
+
+                    <!-- PROJECT 1 -->
+
                     <article class="project-card">
 
                         <div class="project-number">
                             01
                         </div>
 
+
                         <div class="project-icon">
                             &lt;/&gt;
                         </div>
 
-                        <h3>Modern Portfolio Website</h3>
+
+                        <h3>
+                            Modern Portfolio Website
+                        </h3>
+
 
                         <p>
                             A responsive personal portfolio website designed
@@ -387,31 +995,45 @@
                             skills and contact information.
                         </p>
 
+
                         <div class="project-tech">
+
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
+
                         </div>
 
-                        <a href="#" class="project-link">
+
+                        <a
+                            href="#"
+                            class="project-link"
+                        >
                             Project Details →
                         </a>
 
                     </article>
 
 
-                    <!-- Project 2 -->
+
+                    <!-- PROJECT 2 -->
+
                     <article class="project-card">
 
                         <div class="project-number">
                             02
                         </div>
 
+
                         <div class="project-icon">
                             ◉
                         </div>
 
-                        <h3>Management System</h3>
+
+                        <h3>
+                            Management System
+                        </h3>
+
 
                         <p>
                             A concept for a modern management platform that
@@ -419,62 +1041,90 @@
                             reporting.
                         </p>
 
+
                         <div class="project-tech">
+
                             <span>Web App</span>
                             <span>UI/UX</span>
                             <span>Database</span>
+
                         </div>
 
-                        <a href="#" class="project-link">
+
+                        <a
+                            href="#"
+                            class="project-link"
+                        >
                             Project Details →
                         </a>
 
                     </article>
 
 
-                    <!-- Project 3 -->
+
+                    <!-- PROJECT 3 -->
+
                     <article class="project-card">
 
                         <div class="project-number">
                             03
                         </div>
 
+
                         <div class="project-icon">
                             ⚡
                         </div>
 
-                        <h3>Automation Concept</h3>
+
+                        <h3>
+                            Automation Concept
+                        </h3>
+
 
                         <p>
                             A technology concept focused on automating
                             repetitive processes and improving productivity.
                         </p>
 
+
                         <div class="project-tech">
+
                             <span>Automation</span>
                             <span>API</span>
                             <span>JavaScript</span>
+
                         </div>
 
-                        <a href="#" class="project-link">
+
+                        <a
+                            href="#"
+                            class="project-link"
+                        >
                             Project Details →
                         </a>
 
                     </article>
 
 
-                    <!-- Project 4 -->
+
+                    <!-- PROJECT 4 -->
+
                     <article class="project-card">
 
                         <div class="project-number">
                             04
                         </div>
 
+
                         <div class="project-icon">
                             ◇
                         </div>
 
-                        <h3>Business Dashboard</h3>
+
+                        <h3>
+                            Business Dashboard
+                        </h3>
+
 
                         <p>
                             An interactive dashboard concept for presenting
@@ -482,13 +1132,20 @@
                             clear visual format.
                         </p>
 
+
                         <div class="project-tech">
+
                             <span>Dashboard</span>
                             <span>Charts</span>
                             <span>Responsive</span>
+
                         </div>
 
-                        <a href="#" class="project-link">
+
+                        <a
+                            href="#"
+                            class="project-link"
+                        >
                             Project Details →
                         </a>
 
@@ -501,26 +1158,43 @@
         </section>
 
 
-        <!-- ================= CONTACT ================= -->
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
         <section class="contact-section section">
 
             <div class="container contact-container">
 
+
                 <div>
-                    <p class="section-label">Get In Touch</p>
+
+                    <p class="section-label">
+                        Get In Touch
+                    </p>
+
 
                     <h2>
                         Let's build something great together.
                     </h2>
+
                 </div>
+
 
                 <div class="contact-box">
 
-                    <a href="mailto:aasai@example.com">
+
+                    <a
+                        href="mailto:alphonseaasai1998@example.com"
+                    >
                         alphonseaasai1998@example.com
                     </a>
 
-                    <a href="tel:+918939474640">
+
+                    <a
+                        href="tel:+918939474640"
+                    >
                         +91 8939474640
                     </a>
 
@@ -533,14 +1207,22 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
     <footer class="footer">
 
         <div class="container footer-container">
 
+
             <p>
-                © <span id="year"></span> Aasai Thambi D. All Rights Reserved.
+                ©
+                <span id="year"></span>
+                Aasai Thambi D. All Rights Reserved.
             </p>
+
 
             <a href="#home">
                 Back to top ↑
@@ -551,8 +1233,14 @@
     </footer>
 
 
-    <!-- JavaScript -->
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
     <script src="script.js"></script>
 
+
 </body>
+
 </html>
