@@ -2,8 +2,13 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Aasai Thambi | Portfolio</title>
 
@@ -11,6 +16,7 @@
         name="description"
         content="Professional portfolio of Aasai Thambi"
     >
+
 
     <!-- =====================================================
          GOOGLE FONTS
@@ -29,8 +35,15 @@
         rel="stylesheet"
     >
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 
     <!-- =====================================================
@@ -114,22 +127,12 @@
             top: 50%;
             left: 50%;
 
-            /*
-             * Keeps image exactly centered.
-             */
             transform: translate(-50%, -50%);
 
             border-radius: 50% !important;
 
-            /*
-             * Keeps the face proportional.
-             * Prevents stretching.
-             */
             object-fit: cover !important;
 
-            /*
-             * Slightly zooms the framing out/up.
-             */
             object-position: center 45% !important;
 
             border: 5px solid #ffffff;
@@ -230,6 +233,89 @@
 
 
         /* =====================================================
+           SOCIAL LINKS
+        ====================================================== */
+
+        .social-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            margin-top: 22px;
+        }
+
+
+        /* =====================================================
+           SOCIAL LINK BUTTON
+        ====================================================== */
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: transparent;
+
+            border: 1px solid rgba(94, 234, 212, 0.25);
+
+            text-decoration: none;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        /* =====================================================
+           SOCIAL SVG ICON
+        ====================================================== */
+
+        .social-link svg {
+            width: 22px;
+            height: 22px;
+
+            fill: #5eead4;
+
+            transition:
+                fill 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        /* =====================================================
+           SOCIAL HOVER
+        ====================================================== */
+
+        .social-link:hover {
+            transform: translateY(-4px);
+
+            background: #5eead4;
+
+            border-color: #5eead4;
+
+            box-shadow:
+                0 8px 20px rgba(94, 234, 212, 0.25);
+        }
+
+
+        .social-link:hover svg {
+            fill: #07111f;
+
+            transform: scale(1.05);
+        }
+
+
+        /* =====================================================
            TABLET
         ====================================================== */
 
@@ -278,6 +364,7 @@
                 bottom: 20px;
                 left: 20px;
             }
+
         }
 
 
@@ -340,6 +427,22 @@
                 bottom: 18px;
                 left: 12px;
             }
+
+
+            /* Social icons on mobile */
+
+            .social-links {
+                margin-top: 20px;
+
+                gap: 14px;
+            }
+
+
+            .social-link {
+                width: 42px;
+                height: 42px;
+            }
+
         }
 
 
@@ -382,6 +485,7 @@
                 width: 255px;
                 height: 255px;
             }
+
         }
 
     </style>
@@ -405,7 +509,7 @@
                 href="#home"
                 class="logo"
             >
-                Aasai
+                My Portfolio
             </a>
 
 
@@ -487,9 +591,12 @@
             <div class="container hero-container">
 
 
-                <!-- HERO CONTENT -->
+                <!-- =================================================
+                     HERO CONTENT
+                ================================================== -->
 
                 <div class="hero-content">
+
 
                     <p class="eyebrow">
                         Hello, I'm
@@ -514,26 +621,32 @@
                     </p>
 
 
+                    <!-- =================================================
+                         HERO BUTTONS
+                    ================================================== -->
+
                     <div class="hero-buttons">
 
                         <a
-                            
+                            href="#contact"
                             class="btn btn-primary"
                         >
                             Contact Me
                         </a>
 
-
-                       
                     </div>
 
 
-                    <!-- CONTACT DETAILS -->
+                    <!-- =================================================
+                         CONTACT DETAILS
+                    ================================================== -->
 
                     <div
                         class="contact-details"
                         id="contact"
                     >
+
+                        <!-- PHONE -->
 
                         <a href="tel:+918939474640">
 
@@ -546,6 +659,8 @@
                         </a>
 
 
+                        <!-- EMAIL -->
+
                         <a href="mailto:alphonseaasai1998@example.com">
 
                             <span class="contact-icon">
@@ -553,6 +668,82 @@
                             </span>
 
                             alphonseaasai1998@example.com
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         GITHUB & LINKEDIN
+                    ================================================== -->
+
+                    <div class="social-links">
+
+
+                        <!-- =================================================
+                             GITHUB
+                        ================================================== -->
+
+                        <a
+                            href="https://github.com/alphonseaasai1998"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            title="GitHub"
+                            class="social-link"
+                        >
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.72.5.1.68-.22.68-.49
+                                    0-.24-.01-.89-.01-1.75-2.78.62-3.37-1.38-3.37-1.38-.45-1.19-1.11-1.5-1.11-1.5
+                                    -.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.35 1.12 2.92.86
+                                    .09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75
+                                    -.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.18 9.18 0 0 1 12 7.84c.85 0
+                                    1.71.12 2.51.36 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72
+                                    1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.38-.01
+                                    2.49-.01 2.83 0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+                                />
+
+                            </svg>
+
+                        </a>
+
+
+                        <!-- =================================================
+                             LINKEDIN
+                        ================================================== -->
+
+                        <a
+                            href="https://www.linkedin.com/in/d-aasai-thambi-30ba062a6?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            title="LinkedIn"
+                            class="social-link"
+                        >
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path
+                                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04
+                                    -1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.41v1.56h.05
+                                    c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.3ZM5.32
+                                    7.42a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.54
+                                    20.45h3.57V8.98H3.54v11.47ZM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44
+                                    C0 23.2.8 24 1.78 24h20.44C23.2 24 24 23.2 24 22.22V1.78C24 .8
+                                    23.2 0 22.22 0Z"
+                                />
+
+                            </svg>
 
                         </a>
 
@@ -573,7 +764,7 @@
 
 
                     <img
-                        src="AASAI.jpg"
+                        src="assets/AASAI.jpg"
                         alt="Aasai Thambi D."
                         class="profile-image"
                     >
@@ -760,19 +951,31 @@
 
 
                             <p style="color: white;">
-                                Installation, configuration and management of data center components - Server,
-Switches, backup environment and Storage systems.<br>
-Generating reports on software deployment status, client health
-and daily dashboard.<br>
-Knowledge in Active Directory (AD) - User creation, Group creation, Policy addition.<br>
+                                Installation, configuration and management of
+                                data center components - Server, Switches,
+                                backup environment and Storage systems.<br>
+
+                                Generating reports on software deployment
+                                status, client health and daily dashboard.<br>
+
+                                Knowledge in Active Directory (AD) - User
+                                creation, Group creation, Policy addition.
                             </p>
 
 
                             <div class="skill-tags">
 
-                                <span> Data Protector</span>
-                                <span>Server patch</span>
-                                <span>API alerts</span>
+                                <span>
+                                    Data Protector
+                                </span>
+
+                                <span>
+                                    Server patch
+                                </span>
+
+                                <span>
+                                    API alerts
+                                </span>
 
                             </div>
 
@@ -811,20 +1014,31 @@ Knowledge in Active Directory (AD) - User creation, Group creation, Policy addit
                             </h4>
 
 
-            
-<p style="color: white;">
-  Handled 100+ physical servers and 300+ VMs.<br>
-  Handled major incident and troubleshooting in windows domain.<br>
-  Monitored 24x7 data center operations ensuring 99.9% uptime of servers and network
-infrastructure.
-</p>
+                            <p style="color: white;">
+                                Handled 100+ physical servers and 300+ VMs.<br>
+
+                                Handled major incident and troubleshooting
+                                in windows domain.<br>
+
+                                Monitored 24x7 data center operations
+                                ensuring 99.9% uptime of servers and network
+                                infrastructure.
+                            </p>
 
 
                             <div class="skill-tags">
 
-                                <span>Backup & Restore</span>
-                                <span>Active Directory</span>
-                                <span>Incident Management</span>
+                                <span>
+                                    Backup & Restore
+                                </span>
+
+                                <span>
+                                    Active Directory
+                                </span>
+
+                                <span>
+                                    Incident Management
+                                </span>
 
                             </div>
 
@@ -919,6 +1133,8 @@ infrastructure.
                 <div class="projects-grid">
 
 
+
+
                     <!-- PROJECT 1 -->
 
                     <article class="project-card">
@@ -929,33 +1145,34 @@ infrastructure.
 
 
                         <div class="project-icon">
-                            &lt;/&gt;
+                            ◉
                         </div>
 
 
                         <h3>
-                            Modern Portfolio Website
+                            Vegetable Shop website
                         </h3>
 
 
                         <p>
-                            A responsive personal portfolio website designed
-                            to showcase professional experience, projects,
-                            skills and contact information.
+                            A concept for a modern management platform that
+                            simplifies data management, user workflows and
+                            friendly.
                         </p>
 
 
                         <div class="project-tech">
 
+                            <span>Web App</span>
                             <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                            
 
                         </div>
 
 
                         <a
-                            href="#"
+                            href="https://easy-bill-cart.vercel.app/"
+                            class="project-link"
                             class="project-link"
                         >
                             Project Details →
@@ -975,64 +1192,17 @@ infrastructure.
 
 
                         <div class="project-icon">
-                            ◉
-                        </div>
-
-
-                        <h3>
-                            Management System
-                        </h3>
-
-
-                        <p>
-                            A concept for a modern management platform that
-                            simplifies data management, user workflows and
-                            reporting.
-                        </p>
-
-
-                        <div class="project-tech">
-
-                            <span>Web App</span>
-                            <span>UI/UX</span>
-                            <span>Database</span>
-
-                        </div>
-
-
-                        <a
-                            href="#"
-                            class="project-link"
-                        >
-                            Project Details →
-                        </a>
-
-                    </article>
-
-
-
-                    <!-- PROJECT 3 -->
-
-                    <article class="project-card">
-
-                        <div class="project-number">
-                            03
-                        </div>
-
-
-                        <div class="project-icon">
                             ⚡
                         </div>
 
 
                         <h3>
-                            Automation Concept
+                            Super Market Ebill
                         </h3>
 
 
                         <p>
-                            A technology concept focused on automating
-                            repetitive processes and improving productivity.
+                           Concept focused on user friendly processes and improving productivity.
                         </p>
 
 
@@ -1046,8 +1216,7 @@ infrastructure.
 
 
                         <a
-                            href="#"
-                            class="project-link"
+                            href="https://aasaisupermarket.vercel.app/"
                         >
                             Project Details →
                         </a>
@@ -1055,50 +1224,6 @@ infrastructure.
                     </article>
 
 
-
-                    <!-- PROJECT 4 -->
-
-                    <article class="project-card">
-
-                        <div class="project-number">
-                            04
-                        </div>
-
-
-                        <div class="project-icon">
-                            ◇
-                        </div>
-
-
-                        <h3>
-                            Business Dashboard
-                        </h3>
-
-
-                        <p>
-                            An interactive dashboard concept for presenting
-                            business information, metrics and insights in a
-                            clear visual format.
-                        </p>
-
-
-                        <div class="project-tech">
-
-                            <span>Dashboard</span>
-                            <span>Charts</span>
-                            <span>Responsive</span>
-
-                        </div>
-
-
-                        <a
-                            href="#"
-                            class="project-link"
-                        >
-                            Project Details →
-                        </a>
-
-                    </article>
 
                 </div>
 
@@ -1168,7 +1293,9 @@ infrastructure.
 
             <p>
                 ©
+
                 <span id="year"></span>
+
                 Aasai Thambi D. All Rights Reserved.
             </p>
 
